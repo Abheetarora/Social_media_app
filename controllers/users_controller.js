@@ -6,3 +6,15 @@ module.exports.profound=function(req,res){
         title:"User"
     });
 }
+//render the sign up page
+module.exports.signup=function(req,res){
+    return res.render('user_sign_up',{
+        title:"Codeial|sign up",
+    })
+}
+//render the sign in page
+module.exports.signin=function(req,res){
+    return res.render('user_sign_in',{
+        title:"Codeial|sign In",
+    })
+}
