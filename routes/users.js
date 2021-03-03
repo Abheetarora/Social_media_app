@@ -7,4 +7,5 @@ router.get('/profile', usersController.profile)
 router.get('/',usersController.profound)
 router.get('/sign-up',usersController.signup)
 router.get('/sign-in',usersController.signin)
+//router.pos('/create',usersController.create)
 module.exports=router;
