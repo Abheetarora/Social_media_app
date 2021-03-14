@@ -1,7 +1,9 @@
 const User=require('../models/user');
 
 module.exports.profile=function(req,res){
-    return res.end('<h1>User profile</h1>');
+    return res.render('user_profile',{
+        title:"Profile|user"
+    });
 }
 module.exports.profound=function(req,res){
     return res.render('users',{
@@ -10,12 +12,18 @@ module.exports.profound=function(req,res){
 }
 //render the sign up page                                                                                                               
 module.exports.signup=function(req,res){
+    if(req.isAuthenticated()){
+       return res.redirect('/users/profile')
+    }
     return res.render('user_sign_up',{
         title:"Codeial|sign up",
     })
 }
 //render the sign in page
 module.exports.signin=function(req,res){
+    if(req.isAuthenticated()){
+       return  res.redirect('/users/profile')
+    }
     return res.render('user_sign_in',{
         title:"Codeial|sign In",
     })
@@ -44,6 +52,10 @@ module.exports.create = function(req, res){
 }
 
 //get the sign data
-module.exports.createSession=function(req,res){
-    //to do later
+module.exports.createSession = function(req, res){
+    return res.redirect('/');
+}
+module.exports.destroySession = function(req,res){
+    req.logout();
+    res.redirect('/');
 }
