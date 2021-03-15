@@ -1,5 +1,9 @@
-<h1>profile|codeial <h1>
+<%if(locals.user) {%>
+    <main id="prof">
+<h1>profile|Quora Clone <h1>
 <p> <%= user.name%></p>
 <p> <%= user.email%></p>
 <p> <%= user.password%></p>
 <p> <%= user._id%></p>
+</main>
+<%}%>

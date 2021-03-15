@@ -1,0 +1,21 @@
+#foot{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+    background-color:rgb(43, 42, 42);
+    color: aliceblue;
+    position:relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        ul{
+            list-style-type: none;
+            display: inline-flex;
+            li{
+                margin-right: 10px;
+            }
+        }
+        a{
+            color: white;
+            text-decoration:none;
+        }
+  }
