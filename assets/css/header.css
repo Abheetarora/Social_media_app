@@ -14,14 +14,15 @@
     #head ul li {
       margin-right: 10px; }
     #head ul a {
-      color: rgba(255, 255, 255, 0.842);
+      background-color: #bb0707;
+      color: rgba(197, 197, 197, 0.842);
       text-decoration: none;
       right: 0px;
       width: 100%;
       font-variant: small-caps;
       padding: 3px;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: auto; }
       #head ul a:hover {
         font-variant: small-caps;
-        border: 2px solid #111110; }
+        border: 3px solid #8a1b0c; }
