@@ -2,8 +2,24 @@
     <h1>Quora Clone / <%= title %></h1>
     <section id="feed-posts">
         <h3>Post</h3>
-        <form action="" id="new-post-form" method="POST">
+        <form action="/posts/create" id="new-post-form" method="POST">
             <textarea name="content" id="" cols="100" rows="3" placeholder="Write up Your Post here"></textarea>
             <input type="submit" value="Post">
         </form>
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts){ %>
+                    <li>
+                        <p>
+                        <%= post.content%>
+                        <br>
+                        <small>
+                        <%= post.user.name%>
+                        <%= post.createdAt%>
+                    </small>
+                </p>
+                    </li>
+                    <%}%>
+            </ul>
+        </div>
     </section> 
