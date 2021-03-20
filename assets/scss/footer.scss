@@ -1,11 +1,12 @@
 #foot{
-    position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-    background-color:rgb(43, 42, 42);
-    color: aliceblue;
-    position:relative;
+    
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgba(43, 42, 42, 0.555);
+    color: #f0f8ff;
+ display: block;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         ul{
             list-style-type: none;

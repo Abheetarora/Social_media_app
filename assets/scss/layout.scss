@@ -1,10 +1,19 @@
 body{
+    position: relative;
     margin: 0;
+    height: 100%;
     padding: 0;
      background-color: rgba(175, 177, 176, 0.418);
-
+     min-height: 120%;
+     
+    
     #layout-main{
-        height: 100%;
+        padding-bottom: 2em; 
+        height: 120%;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
     }
 }
