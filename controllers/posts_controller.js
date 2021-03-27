@@ -51,10 +51,10 @@ module.exports.destroy = async function(req, res){
                     },
                     message: "Post deleted"
                 });
-                req.flash('success', 'Post and associated comments deleted!');
+                
             }
 
-            
+            //req.flash('success', 'Post and associated comments deleted!');
 
             return res.redirect('back');
         }else{
