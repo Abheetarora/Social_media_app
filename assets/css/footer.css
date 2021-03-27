@@ -2,7 +2,12 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: 12vw;
   background-color: rgba(43, 42, 42, 0.555);
+  background: #ff5f6d;
+  background: -webkit-linear-gradient(to right, #ff5f6d, #ffc371);
+  background: linear-gradient(to right, #a45fff7a, #ffffffaf);
+  min-height: 10vh;
   color: #f0f8ff;
   display: block;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }

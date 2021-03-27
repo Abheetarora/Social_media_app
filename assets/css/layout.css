@@ -1,10 +1,10 @@
 body {
   position: relative;
   margin: 0;
-  height: 100%;
   padding: 0;
-  background-color: rgba(175, 177, 176, 0.418);
-  min-height: 120%; }
+  background-color: rgba(255, 255, 255, 0.418);
+  min-height: 120%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
   body #layout-main {
     padding-bottom: 2em;
     height: 120%;
