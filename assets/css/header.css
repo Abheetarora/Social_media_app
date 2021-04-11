@@ -2,12 +2,12 @@
   width: 99.3%;
   padding-left: 10px;
   background-color: rgba(43, 42, 42, 0.555);
-  background-color: red;
+  background: #df2108;
   min-height: 10vh;
   color: aliceblue;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   position: static;
-  height: 200px; }
+  height: 100px; }
   #head ul {
     padding-right: 0px;
     list-style-type: none;
@@ -27,3 +27,6 @@
       overflow: auto; }
       #head ul a:hover {
         border: 1px dotted #1c2336; }
+    #head ul img {
+      width: 20px;
+      height: 20px; }

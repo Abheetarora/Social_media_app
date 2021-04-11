@@ -3,10 +3,16 @@
    
     <ul>
 <%if(locals.user) {%>
+    <li>
+        <img src="<%= user.avatar %>" alt="no profile">
+    </li>
 <li>
     <a href="/users/profile/<%=user.id %>">
     <%= user.name %>
+    
 </a>
+
+
 </li>
 <li>
     <a href="/users/sign-out">sign Out</a>
