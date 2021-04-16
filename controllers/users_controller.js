@@ -1,17 +1,44 @@
 const User=require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const FriendShip=require("../models/Friendship.js");
 
-
-module.exports.profile=function(req,res){
-    User.findById(req.params.id,function(err,user){
-        return res.render('user_profile',{
-            title:"Profile|user",
-            profile_user:user
-        });
-    })
+// module.exports.profile=function(req,res){
+//     User.findById(req.params.id,function(err,user){
+//         return res.render('user_profile',{
+//             title:"Profile|user",
+//             profile_user:user
+//         });
+//     })
    
+// }
+
+module.exports.profile = async function(req, res){
+    try{
+    let profile_user = await User.findById(req.params.id)
+    let current_user = await User.findById(req.user.id);
+    let friendship = await FriendShip.findOne({
+        to_user : profile_user.id,
+        from_user : current_user.id
+    });
+    console.log(friendship);
+    return res.render('user_profile', {
+        title: 'User Profile',
+        profile_user: profile_user,
+        friendship : friendship
+        });
+    }
+    catch(err)
+    {
+        console.log(err);
+        return res.redirect("back");
+    }
+
 }
+
+
+
+
 module.exports.update = async function(req, res){
     // if(req.user.id == req.params.id){
     //     User.findByIdAndUpdate(req.params.id, req.body, function(err, user){

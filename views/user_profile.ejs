@@ -1,26 +1,26 @@
+ <link rel="stylesheet" href="/css/user_profile.css">
+        <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100">
 
-    <main id="prof">
-        <h1>profile|Quora Clone <h1>
-            <% if(user.id==profile_user.id) { %>
-            <h2>Update or Change your Name/Email</h2>
-            <% } %>
-            <link rel="stylesheet" href="/css/user_profile.css">
-            <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
-         <% if(user.id == profile_user.id){ %>
-            <!-- if user matches then show the form  -->
-            <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
+        
+
+
+        <% if(user.id == profile_user.id){ %>
+            <!-- if user matches then show the form -->
+            <form action="/users/update/<%= profile_user.id %>" method="POST" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
                 <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
-        
                 <input type="file" name="avatar" placeholder="Profile Picture">
                 <input type="submit"  value="Update">
             </form>
-        
-            <% }else{ %>
-                <p> <%= profile_user.name%></p>
-        <p> <%= profile_user.email%></p>
+            
+        <%}else{%>    
+            <!-- else show only the profile info -->
+            <p><%= profile_user.name %></p>
+            <p><%= profile_user.email %></p>
+            <% if(friendship) {%>
+                <p>Both Of You Are Friends</p>
+                <a class = "friendship-breakup" href="/friendships/breakup/<%= profile_user._id %>">BreakUp Friendship</a>
+            <% } else {%>
+                <a class = "friendship-create" href="/friendships/create/<%= profile_user._id %>">Create Friendship</a>
             <% } %>
-                <!--else show only profile info-->
-        </main>
-        
-        
+        <%} %>

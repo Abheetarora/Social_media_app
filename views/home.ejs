@@ -21,18 +21,30 @@
             </ul>
         </div>
         </section> 
-        <section id="user-friends">
-            <h4>Friends</h4>
-            <%if(locals.user) { %>
-            
-            <% for(u of all_users){ %>
-                <p>
-                    <a href="/users/profile/<%=u.id%>"><%= u.name %></a>
-                </p>
+        <% if(current_user){ %>
+            <section id="user-friends">
+                <h4>Friends</h4>
+                <% if(current_user){ %>
+                    <!-- <%= current_user.name %> -->
+                    <% for(u of current_user.friendships){%>
+                        <p>
+                            <a href="/users/profile/<%= u.to_user.id %>"><%= u.to_user.name %></a>
+                            <small>
+                                <a class = "friendship-create" href="/friendships/breakup/<%= u.to_user.id %>">X</a>
+                            </small>
+                        </p>
+                    <% } %>
                 <% } %>
-           <% }%>
-     
-        </section>
+            </section>
+            <% } %>
+            <section id="users">
+                <h4>Users</h4>
+                <% for(u of all_users){%>
+                    <p>
+                        <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                    </p>
+                <% } %>
+            </section>
     </div>
    
     <script src="/js/home_posts.js"></script>

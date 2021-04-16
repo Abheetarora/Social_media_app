@@ -11,6 +11,8 @@
     min-height: 10vh;
     color: #f0f8ff;
  display: block;
+ display: flex;
+    justify-content: flex-start;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         ul{
             list-style-type: none;
