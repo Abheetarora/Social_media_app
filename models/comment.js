@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const CommentSchema=new mongoose.Schema({
 
     content:{
-        type:String,
+        type:String, 
         required:true
     },
     //comment belongs to a user
@@ -14,7 +14,11 @@ const CommentSchema=new mongoose.Schema({
     post:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Post'
-    }
+    },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Like'
+    }]
 },{
     timestamps:true
 

@@ -3,6 +3,7 @@
 // this class would be initialized for every post on the page
 // 1. When the page loads
 // 2. Creation of every post dynamically via AJAX
+
 class PostComments{
     // constructor is used to initialize the instance of the class whenever a new instance is created
     constructor(postId){
@@ -21,7 +22,6 @@ class PostComments{
 
 
     createComment(postId){
-      
         let pSelf = this;
         this.newCommentForm.submit(function(e){
             e.preventDefault();
@@ -35,10 +35,12 @@ class PostComments{
                     let newComment = pSelf.newCommentDom(data.data.comment);
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
-                    console.log('abheet');
+
+                    // CHANGE :: enable the functionality of the toggle like button on the new comment
+                    new ToggleLike($(' .toggle-like-button', newComment));
                     new Noty({
-                        theme: 'metroui',
-                        text: "Comment aagya",
+                        theme: 'relax',
+                        text: "Comment published!",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
@@ -56,7 +58,8 @@ class PostComments{
 
 
     newCommentDom(comment){
-        // I've added a class 'delete-comment-button' to the delete comment link and also id to the comment's li
+        // CHANGE :: show the count of zero likes on this comment
+
         return $(`<li id="comment-${ comment._id }">
                         <p>
                             
@@ -69,6 +72,14 @@ class PostComments{
                             <small>
                                 ${comment.user.name}
                             </small>
+                            <small>
+                            
+                                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
+                                    0 Likes
+                                </a>
+                            
+                            </small>
+
                         </p>    
 
                 </li>`);
@@ -87,7 +98,7 @@ class PostComments{
 
                     new Noty({
                         theme: 'relax',
-                        text: "Comment gaya",
+                        text: "Comment Deleted",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
