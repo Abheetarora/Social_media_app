@@ -33,6 +33,7 @@
     "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "socket.io": "^4.0.1"
   }
 }
