@@ -1,9 +1,9 @@
-
+    <link rel="stylesheet" href="/css/comment.css">
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/chat_box.css">
     <div id="home-container">
         <section id="feed-posts">
-            <h3>Post</h3>
+            <h3>Questions</h3>
             <% if (locals.user) { %>
             <form action="/posts/create" id="new-post-form" method="POST">
                 <textarea name="content" id="area" cols="100" rows="3" placeholder="Write up Your Post here" required></textarea>
@@ -24,7 +24,7 @@
         </section> 
         <% if(current_user){ %>
             <section id="user-friends">
-                <h4>Friends</h4>
+                <h4>Connections</h4>
                 <% if(current_user){ %>
                     <!-- <%= current_user.name %> -->
                     <% for(u of current_user.friendships){%>
@@ -39,7 +39,7 @@
             </section>
             <% } %>
             <section id="users">
-                <h4>Users</h4>
+                <h4>People</h4>
                 <% for(u of all_users){%>
                     <p>
                         <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
