@@ -87,7 +87,7 @@
     let deletePost = function(deleteLink){
         $(deleteLink).click(function(e){
             e.preventDefault();
-
+                
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),

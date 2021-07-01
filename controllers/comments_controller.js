@@ -21,7 +21,9 @@ module.exports.create = async function(req, res){
             
             comment = await comment.populate('user', 'name email').execPopulate();
             // commentsMailer.newComment(comment);
-
+            setInterval(() => {
+                
+           
             let job = queue.create('emails', comment).save(function(err){
                 if (err){
                     console.log('Error in sending to the queue', err);
@@ -30,6 +32,8 @@ module.exports.create = async function(req, res){
                 console.log('job enqueued', job.id);
 
             })
+        }, 10000);
+        
 
             if (req.xhr){
                 
